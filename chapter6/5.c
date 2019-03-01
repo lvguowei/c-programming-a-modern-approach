@@ -1,14 +1,16 @@
 #include <stdio.h>
 
-int main(void)
-{
-  int i, n;
-
-  printf("Enter limit on maximum square: ");
+int main() {
+  int n;
+  printf("Enter a number: ");
   scanf("%d", &n);
 
-  for (i = 2; i * i <= n; i += 2)
-    printf("%d\n", i * i);
+  printf("The reversal is: ");
 
-  return 0;
+  do {
+    printf("%d", n % 10);
+    n /= 10;
+  } while (n != 0);
+
+  printf("\n");
 }
