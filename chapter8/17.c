@@ -4,10 +4,16 @@ int round_row(int next, int n);
 int round_col(int next, int n);
 
 int main() {
-  int n = 99;
+  int n;
   printf("Enter size of magic number: ");
   scanf("%d", &n);
-  int grid[99][99] = {0};
+  int grid[n][n];
+
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      grid[i][j] = 0;
+    }
+  }
 
   int row = 0, col = n / 2;
   for (int i = 1; i <= n * n; i++) {
@@ -37,6 +43,8 @@ int main() {
 int round_row(int next, int n) {
   if (next == -1) {
     return n - 1;
+  } else if ( next == n) {
+    return 0;
   } else {
     return next;
   }
