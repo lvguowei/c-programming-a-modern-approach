@@ -1,71 +1,26 @@
-#include <ctype.h>
 #include <stdio.h>
 
-#define MAX_WORD_LEN 100
-int compute_scrabble_value(const char *word);
+char *strings1[] = {"ten",     "eleven",  "twelve",    "thirteen", "fourteen",
+                    "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 
+char *strings2[] = {"twenty", "thirty",  "forty",  "fifty",
+                    "sixty",  "seventy", "eighty", "ninty"};
+char *strings3[] = {"one", "two",   "three", "foure", "five",
+                    "six", "seven", "eight", "nine"};
 int main() {
-  char word[MAX_WORD_LEN];
-  printf("Enter a word: ");
-  scanf("%s", word);
-  printf("Scrabble value: %d\n", compute_scrabble_value(word));
-}
+  int n1, n2;
+  printf("Enter a two-digit number: ");
+  scanf("%1d%1d", &n1, &n2);
 
-int compute_scrabble_value(const char *word) {
-  int score = 0;
-  char ch;
-  for (int i = 0; word[i] != '\0'; i++) {
-    ch = word[i];
-    ch = toupper(ch);
-    switch (ch) {
-    case 'A':
-    case 'E':
-    case 'I':
-    case 'L':
-    case 'N':
-    case 'O':
-    case 'R':
-    case 'S':
-    case 'T':
-    case 'U': {
-      score += 1;
-      break;
-    }
-    case 'D':
-    case 'G': {
-      score += 2;
-      break;
-    }
-    case 'B':
-    case 'C':
-    case 'M':
-    case 'P': {
-      score += 3;
-      break;
-    }
-    case 'F':
-    case 'H':
-    case 'V':
-    case 'W':
-    case 'Y': {
-      score += 4;
-      break;
-    }
-    case 'K': {
-      score += 5;
-      break;
-    }
-    case 'J':
-    case 'X': {
-      score += 8;
-      break;
-    }
-    case 'Q':
-    case 'Z': {
-      score += 10;
-      break;
-    }
+  if (n1 == 1) {
+    char *str = strings1[n2];
+    printf("You entered the number %s.\n", str);
+  } else {
+    if (n2 == 0) {
+      printf("You entered the number %s\n", strings2[n1 - 2]);
+    } else {
+      printf("You entered the number %s-%s\n", strings2[n1 - 2],
+             strings3[n2 - 1]);
     }
   }
-  return score;
 }
