@@ -1,0 +1,15 @@
+hello        this is my first
+time having       this class with you                        
+Assemblerisaalskdjflaskdjflksdjflaksdjflaksdjf (assembly) language is a low-level
+programming language, and it is specific to a particular
+processor (microcontroller) architecture [2]. As the oldest
+programming language, and of all languages, it bears the
+closest resemblance to a native machine language. It
+provides a direct access to computer hardware, requiring
+you to understand much about your computer’s architecture
+and operating system [3].
+A large number of modern microcontrollers are based on
+a similar architecture as the microcontroller 8086 [3] and
+have similar abbreviations for the names of assembly
+instructions. So, the study of microcontroller 8086 is
+reckoned not only for pedagogica
