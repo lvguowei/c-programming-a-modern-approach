@@ -1,0 +1,38 @@
+
+* 1
+#+BEGIN_SRC C :cmdline < 1.input
+  #include <stdio.h>
+
+  #define COUNTRY_COUNT \
+    ((int) (sizeof(country_codes) / sizeof(country_codes[0])))
+
+  struct dialing_code
+  {
+    char *country;
+    int code;
+  };
+
+  const struct dialing_code country_codes[] =
+    {{"Argentina", 54}, {"Bangladesh", 880},
+     {"China", 86}, {"France", 33}};
+
+
+  int main(int argc, char *argv[])
+  {
+    int code;
+    scanf("%d", &code);
+    for (int i = 0; i < COUNTRY_COUNT; ++i) {
+      struct dialing_code dc = country_codes[i];
+      if (dc.code == code) {
+        printf("Country is: %s\n", dc.country);
+        return 0;
+      }
+    }
+    printf("Not found\n");
+    return 0;
+  }
+
+#+END_SRC
+
+#+RESULTS:
+: Country is: Bangladesh
